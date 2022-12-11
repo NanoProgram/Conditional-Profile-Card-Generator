@@ -34,14 +34,26 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name} ${variables.lastname}</h1>
-          <h2>${variables.role}</h2>
-          <h3>${variables.city} ${variables.country}</h3>
+          <h1>${variables.name == null ? "" : variables.name} ${
+    variables.lastname == null ? "" : variables.lastname
+  }</h1>
+          <h2>${variables.role == null ? "" : variables.role}</h2>
+          <h3>${variables.city == null ? "" : variables.city} ${
+    variables.country == null ? "" : variables.country
+  }</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fa fa-twitter"></i>${variables.twitter}</a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i>${variables.github}</a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i>${variables.linkedin}</a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i>${variables.instagram}</a></li>
+            <li><a href="https://twitter.com/4geeksacademy" target="_blank"><i class="fab fa-twitter"></i>${
+              variables.twitter == null ? "" : variables.twitter
+            }</a></li>
+            <li><a href="https://github.com/4geeksacademy" target="_blank"><i class="fab fa-github"></i>${
+              variables.github == "alesanchezr" ? "" : variables.github
+            }</a></li>
+            <li><a href="https://linkedin.com/4geeksacademy" target="_blank"><i class="fab fa-linkedin"></i>${
+              variables.linkedin == null ? "" : variables.linkedin
+            }</a></li>
+            <li><a href="https://instagram.com/4geeksacademy" target="_blank"><i class="fab fa-instagram"></i>${
+              variables.instagram == null ? "" : variables.instagram
+            }</a></li>
           </ul>
         </div>
     `;
